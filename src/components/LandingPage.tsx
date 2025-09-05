@@ -435,7 +435,7 @@ export function LandingPage({ onAuthSuccess }: LandingPageProps) {
                   scale: [1, 1.02, 1],
                 }}
                 transition={{
-                  duration: 50,
+                  duration: 2,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
@@ -576,8 +576,8 @@ export function LandingPage({ onAuthSuccess }: LandingPageProps) {
           {/* Benefits Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "324+", subtitle: t('verifiedFarmers'), icon: "👨‍🌾" },
-              { title: "94%", subtitle: t('priceTransparency'), icon: "💰" },
+              { title: "10+", subtitle: t('verifiedFarmers'), icon: "👨‍🌾" },
+              { title: "97%", subtitle: t('priceTransparency'), icon: "💰" },
               { title: "85%", subtitle: t('supplyChainEfficiency'), icon: "📈" },
               { title: "3.2", subtitle: "Avg. Days Farm to Table", icon: "⏱️" }
             ].map((stat, index) => (

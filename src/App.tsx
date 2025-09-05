@@ -49,6 +49,10 @@ const mockProducts = [
     id: "PR001",
     name: "Organic Tomatoes",
     farmer: "Raj Kumar",
+    farmerId: "farmer_001",
+    userId: "farmer_001",
+    addedByType: "farmer",
+    addedByName: "Raj Kumar",
     location: "Bhubaneswar, Odisha",
     harvestDate: "2025-08-25",
     price: 45,
@@ -69,6 +73,10 @@ const mockProducts = [
     id: "PR002",
     name: "Basmati Rice",
     farmer: "Priya Devi",
+    farmerId: "farmer_002",
+    userId: "farmer_002",
+    addedByType: "farmer",
+    addedByName: "Priya Devi",
     location: "Sambalpur, Odisha",
     harvestDate: "2025-08-20",
     price: 80,
@@ -89,6 +97,10 @@ const mockProducts = [
     id: "PR003",
     name: "Green Vegetables Mix",
     farmer: "Suresh Patel",
+    farmerId: "farmer_003",
+    userId: "farmer_003",
+    addedByType: "farmer",
+    addedByName: "Suresh Patel",
     location: "Berhampur, Odisha",
     harvestDate: "2025-08-28",
     price: 35,
@@ -104,6 +116,236 @@ const mockProducts = [
       { stage: "Retail", location: "City Mall", date: "2025-08-30", status: "completed" },
       { stage: "Consumer", location: "Available for Purchase", date: "2025-08-30", status: "current" }
     ]
+  },
+  {
+    id: "PR004",
+    name: "Wheat",
+    farmerName: "Aman",
+    farmerId: "wholesaler_001",
+    userId: "wholesaler_001",
+    addedByType: "wholesaler",
+    addedByName: "Aman",
+    location: "Sultanpur",
+    harvestDate: "2025-03-10",
+    price: 36.5,
+    quality: "gradeA",
+    status: "Available",
+    currentLocation: "Wholesale Market",
+    blockchainHash: "0x4e5f6a7b8c9d...",
+    qrCode: "QR_WHEAT_004",
+    supplyChain: [
+      { stage: "Wholesale", location: "Sultanpur", date: "2025-03-10", status: "completed" },
+      { stage: "Distribution", location: "Regional Center", date: "2025-03-11", status: "current" },
+      { stage: "Retail", location: "", date: "", status: "pending" },
+      { stage: "Consumer", location: "", date: "", status: "pending" }
+    ]
+  },
+  {
+    id: "PR005",
+    name: "Watermelon",
+    farmerName: "Sanjana",
+    farmerId: "wholesaler_002", 
+    userId: "wholesaler_002",
+    addedByType: "wholesaler",
+    addedByName: "Sanjana",
+    location: "Varanasi",
+    harvestDate: "2025-09-02",
+    price: 80,
+    quality: "gradeA",
+    status: "Sold",
+    currentLocation: "Consumer Delivery",
+    blockchainHash: "0x5f6a7b8c9d0e...",
+    qrCode: "QR_WATERMELON_005",
+    supplyChain: [
+      { stage: "Wholesale", location: "Varanasi", date: "2025-09-02", status: "completed" },
+      { stage: "Distribution", location: "Regional Hub", date: "2025-09-03", status: "completed" },
+      { stage: "Retail", location: "Local Market", date: "2025-09-04", status: "completed" },
+      { stage: "Consumer", location: "Delivered", date: "2025-09-05", status: "completed" }
+    ]
+  },
+  // Sanjeev's Wholesale Products
+  {
+    id: "PR007",
+    name: "Rice",
+    farmerName: "Sanjeev",
+    farmerId: "wholesaler_sanjeev",
+    userId: "wholesaler_sanjeev",
+    addedByType: "wholesaler",
+    addedByName: "Sanjeev",
+    location: "Prayagraj",
+    harvestDate: "2025-09-06",
+    price: 55,
+    quality: "gradeA",
+    status: "Available",
+    currentLocation: "Wholesale Hub",
+    blockchainHash: "0x7a8b9c0d1e2f...",
+    qrCode: "QR_RICE_007",
+    supplyChain: [
+      { stage: "Wholesale", location: "Prayagraj", date: "2025-09-06", status: "completed" },
+      { stage: "Distribution", location: "Regional Center", date: "2025-09-07", status: "current" },
+      { stage: "Retail", location: "", date: "", status: "pending" },
+      { stage: "Consumer", location: "", date: "", status: "pending" }
+    ]
+  },
+  {
+    id: "PR008",
+    name: "Potatoes", 
+    farmerName: "Sanjeev",
+    farmerId: "wholesaler_sanjeev",
+    userId: "wholesaler_sanjeev",
+    addedByType: "wholesaler",
+    addedByName: "Sanjeev",
+    location: "Gaur City",
+    harvestDate: "2025-09-05",
+    price: 70,
+    quality: "gradeA",
+    status: "Available",
+    currentLocation: "Wholesale Market",
+    blockchainHash: "0x8b9c0d1e2f3a...",
+    qrCode: "QR_POTATOES_008",
+    supplyChain: [
+      { stage: "Wholesale", location: "Gaur City", date: "2025-09-05", status: "completed" },
+      { stage: "Distribution", location: "Distribution Center", date: "2025-09-06", status: "current" },
+      { stage: "Retail", location: "", date: "", status: "pending" },
+      { stage: "Consumer", location: "", date: "", status: "pending" }
+    ]
+  },
+  // Additional products for other users to test filtering
+  {
+    id: "PR009",
+    name: "Tomatoes",
+    farmerName: "Gupta",
+    farmerId: "wholesaler_gupta",
+    userId: "wholesaler_gupta",
+    addedByType: "wholesaler", 
+    addedByName: "Gupta",
+    location: "Rampur",
+    harvestDate: "2025-09-04",
+    price: 40,
+    quality: "gradeA",
+    status: "Available",
+    currentLocation: "Wholesale Center",
+    blockchainHash: "0x9c0d1e2f3a4b...",
+    qrCode: "QR_TOMATOES_009",
+    supplyChain: [
+      { stage: "Wholesale", location: "Rampur", date: "2025-09-04", status: "completed" },
+      { stage: "Distribution", location: "Regional Hub", date: "2025-09-05", status: "current" },
+      { stage: "Retail", location: "", date: "", status: "pending" },
+      { stage: "Consumer", location: "", date: "", status: "pending" }
+    ]
+  },
+  {
+    id: "PR010",
+    name: "Wheat",
+    farmerName: "Komal",
+    farmerId: "retailer_komal",
+    userId: "retailer_komal",
+    addedByType: "retailer",
+    addedByName: "Komal",
+    location: "Ghazipur",
+    harvestDate: "2025-09-03",
+    price: 40,
+    quality: "gradeA+",
+    status: "Available",
+    currentLocation: "Retail Store",
+    blockchainHash: "0x0d1e2f3a4b5c...",
+    qrCode: "QR_WHEAT_010",
+    supplyChain: [
+      { stage: "Retail", location: "Ghazipur", date: "2025-09-03", status: "completed" },
+      { stage: "Distribution", location: "Local Network", date: "2025-09-03", status: "completed" },
+      { stage: "Consumer", location: "Ready for Purchase", date: "2025-09-04", status: "current" }
+    ]
+  },
+  {
+    id: "PR011",
+    name: "Ragu Special Mix",
+    farmerName: "Ragu",
+    farmerId: "retailer_ragu",
+    userId: "retailer_ragu", 
+    addedByType: "retailer",
+    addedByName: "Ragu",
+    location: "Sultanpur",
+    harvestDate: "2025-09-02",
+    price: 85,
+    quality: "Premium",
+    status: "Sold",
+    currentLocation: "Consumer Home",
+    blockchainHash: "0x1e2f3a4b5c6d...",
+    qrCode: "QR_RAGU_011",
+    supplyChain: [
+      { stage: "Retail", location: "Sultanpur", date: "2025-09-02", status: "completed" },
+      { stage: "Distribution", location: "Local Delivery", date: "2025-09-02", status: "completed" },
+      { stage: "Consumer", location: "Home Delivery", date: "2025-09-03", status: "completed" }
+    ]
+  },
+  // Shyam's Wholesale Products
+  {
+    id: "PR012",
+    name: "Onions",
+    farmerName: "Shyam",
+    farmerId: "wholesaler_shyam",
+    userId: "wholesaler_shyam",
+    addedByType: "wholesaler",
+    addedByName: "Shyam",
+    location: "Nashik",
+    harvestDate: "2025-09-07",
+    price: 60,
+    quality: "gradeA",
+    status: "Available",
+    currentLocation: "Wholesale Hub",
+    blockchainHash: "0x2f3a4b5c6d7e...",
+    qrCode: "QR_ONIONS_012",
+    supplyChain: [
+      { stage: "Wholesale", location: "Nashik", date: "2025-09-07", status: "completed" },
+      { stage: "Distribution", location: "Regional Center", date: "2025-09-08", status: "current" },
+      { stage: "Retail", location: "", date: "", status: "pending" },
+      { stage: "Consumer", location: "", date: "", status: "pending" }
+    ]
+  },
+  {
+    id: "PR013",
+    name: "Mustard Seeds",
+    farmerName: "Shyam",
+    farmerId: "wholesaler_shyam",
+    userId: "wholesaler_shyam",
+    addedByType: "wholesaler",
+    addedByName: "Shyam", 
+    location: "Rajasthan",
+    harvestDate: "2025-09-06",
+    price: 120,
+    quality: "Premium",
+    status: "Available",
+    currentLocation: "Wholesale Market",
+    blockchainHash: "0x3a4b5c6d7e8f...",
+    qrCode: "QR_MUSTARD_013",
+    supplyChain: [
+      { stage: "Wholesale", location: "Rajasthan", date: "2025-09-06", status: "completed" },
+      { stage: "Distribution", location: "Distribution Center", date: "2025-09-07", status: "current" },
+      { stage: "Retail", location: "", date: "", status: "pending" },
+      { stage: "Consumer", location: "", date: "", status: "pending" }
+    ]
+  },
+  {
+    id: "PR006",
+    name: "Chana",
+    farmerName: "Shubham Yadav",
+    farmerId: "retailer_001",
+    userId: "retailer_001", 
+    addedByType: "retailer",
+    addedByName: "Shubham Yadav",
+    location: "Ghazipur",
+    harvestDate: "2025-09-01",
+    price: 80,
+    quality: "Grade A+",
+    status: "Sold",
+    currentLocation: "Consumer Home",
+    blockchainHash: "0x6a7b8c9d0e1f...",
+    qrCode: "QR_CHANA_006",
+    supplyChain: [
+      { stage: "Retail", location: "Ghazipur", date: "2025-09-01", status: "completed" },
+      { stage: "Distribution", location: "Local Network", date: "2025-09-01", status: "completed" },
+      { stage: "Consumer", location: "Home Delivery", date: "2025-09-02", status: "completed" }
+    ]
   }
 ];
 
@@ -116,10 +358,14 @@ function MainApp() {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [productFormOpen, setProductFormOpen] = useState(false);
   const [purchaseModalOpen, setPurchaseModalOpen] = useState(false);
+  const [qrUploadOpen, setQrUploadOpen] = useState(false);
+  const [userQRCodes, setUserQRCodes] = useState({}); // Store QR codes per user
+  const [activeTab, setActiveTab] = useState('products');
   const [selectedProductForPurchase, setSelectedProductForPurchase] = useState(null);
   const [user, setUser] = useState(null);
   const [userProfile, setUserProfile] = useState(null);
   const [products, setProducts] = useState(mockProducts);
+  const [userUploads, setUserUploads] = useState([]); // Track real user uploads separately
   const [loading, setLoading] = useState(false);
   const [analytics, setAnalytics] = useState(null);
   const [accessToken, setAccessToken] = useState(null);
@@ -229,6 +475,8 @@ function MainApp() {
     setAnalytics(null);
     // Reset to mock data
     setProducts(mockProducts);
+    // Clear user uploads
+    setUserUploads([]);
   };
 
   const handleAuthSuccess = (authenticatedUser) => {
@@ -249,6 +497,8 @@ function MainApp() {
 
   const handleProductCreated = (newProduct) => {
     setProducts(prev => [newProduct, ...prev]);
+    // Also add to user uploads tracking for uploads section
+    setUserUploads(prev => [newProduct, ...prev]);
     // Refresh analytics if user is authenticated
     if (accessToken) {
       fetchAnalytics(accessToken);
@@ -298,11 +548,47 @@ function MainApp() {
     }
   };
 
-  const filteredProducts = products.filter(product => 
-    product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    (product.farmer || product.farmerName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-    product.id.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  // Filter products based on user role and supply chain hierarchy
+  const getFilteredProductsByUserRole = () => {
+    let roleFilteredProducts = products;
+    
+    if (userProfile) {
+      switch (userProfile.userType) {
+        case 'consumer':
+          // Consumers can only see products uploaded by retailers
+          roleFilteredProducts = products.filter(product => product.addedByType === 'retailer');
+          break;
+        case 'retailer':
+          // Retailers can only see products uploaded by wholesalers
+          roleFilteredProducts = products.filter(product => product.addedByType === 'wholesaler');
+          break;
+        case 'wholesaler':
+          // Wholesalers can only see products uploaded by farmers
+          roleFilteredProducts = products.filter(product => product.addedByType === 'farmer');
+          break;
+        case 'farmer':
+          // Farmers can only see their own uploaded products (from userUploads array)
+          // NOT mock data - only real form submissions that belong to them
+          roleFilteredProducts = userUploads.filter(product => 
+            (product.userId === userProfile.userId) || 
+            (product.farmerId === userProfile.userId) ||
+            (product.addedByName === userProfile.name && product.addedByType === 'farmer')
+          );
+          break;
+        default:
+          roleFilteredProducts = products;
+      }
+    }
+    
+    // Apply search filter to role-filtered products
+    return roleFilteredProducts.filter(product => 
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (product.farmer || product.farmerName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.id.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  };
+
+  const filteredProducts = getFilteredProductsByUserRole();
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -403,38 +689,72 @@ function MainApp() {
                 {t('refresh')}
               </Button>
               
-              <Dialog open={scanDialogOpen} onOpenChange={setScanDialogOpen}>
-                <DialogTrigger asChild>
-                  <Button variant="outline" size="sm">
-                    <QrCode className="size-4 mr-2" />
-                    {t('scanqr')}
-                  </Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Scan Product QR Code</DialogTitle>
-                    <DialogDescription>
-                      Point your camera at the product QR code to track its journey
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="flex flex-col items-center gap-4 py-6">
-                    <div className="w-64 h-64 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
-                      <Scan className="size-16 text-gray-400" />
+              {/* Upload QR Dialog - Only for Non-Consumer Users */}
+              {!((!userProfile && userType === 'consumer') || (userProfile && userProfile.userType === 'consumer')) && (
+                <Dialog open={qrUploadOpen} onOpenChange={setQrUploadOpen}>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" size="sm">
+                      <QrCode className="size-4 mr-2" />
+                      {t('uploadqr')}
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Upload Product QR Code</DialogTitle>
+                      <DialogDescription>
+                        Upload a QR code image to track the product journey
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="flex flex-col items-center gap-4 py-6">
+                      <div className="w-64 h-64 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
+                        {userProfile && userQRCodes[userProfile.userId] ? (
+                          <img src={userQRCodes[userProfile.userId]} alt="Uploaded QR" className="w-full h-full object-contain" />
+                        ) : (
+                          <QrCode className="size-16 text-gray-400" />
+                        )}
+                      </div>
+                      <div className="w-full">
+                        <label 
+                          htmlFor="qr-upload"
+                          className="flex flex-col items-center justify-center w-full h-12 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
+                        >
+                          <div className="flex items-center gap-2 text-gray-600">
+                            <QrCode className="size-4" />
+                            <span className="text-sm font-medium">
+                              {userProfile && userQRCodes[userProfile.userId] ? 'Change QR Code' : 'Choose QR Code Image'}
+                            </span>
+                          </div>
+                          <input
+                            id="qr-upload"
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => {
+                              const file = e.target.files?.[0];
+                              if (file && userProfile) {
+                                const reader = new FileReader();
+                                reader.onload = (e) => {
+                                  // Store QR code for current user
+                                  setUserQRCodes(prev => ({
+                                    ...prev,
+                                    [userProfile.userId]: e.target?.result
+                                  }));
+                                  // Simulate QR processing - load sample product for demo
+                                  setSelectedProduct(mockProducts[0]);
+                                };
+                                reader.readAsDataURL(file);
+                              }
+                            }}
+                            className="hidden"
+                          />
+                        </label>
+                      </div>
+                      <p className="text-sm text-gray-500 text-center">
+                        Select QR code image from your device
+                      </p>
                     </div>
-                    <p className="text-sm text-gray-500 text-center">
-                      Camera interface would be integrated here for QR scanning
-                    </p>
-                    <div className="flex gap-2">
-                      <Button onClick={() => {
-                        setSelectedProduct(mockProducts[0]);
-                        setScanDialogOpen(false);
-                      }}>
-                        Demo: Load Sample Product
-                      </Button>
-                    </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
+                  </DialogContent>
+                </Dialog>
+              )}
 
               {!user ? (
                 <Button onClick={() => setAuthModalOpen(true)}>
@@ -533,12 +853,18 @@ function MainApp() {
         </div>
 
         {/* Main Content */}
-        <Tabs defaultValue="products" className="space-y-6">
-          <TabsList className={`grid w-full ${user ? 'grid-cols-5' : 'grid-cols-4'}`}>
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
+          <TabsList className={`grid w-full ${user ? (userProfile && ['wholesaler', 'retailer'].includes(userProfile.userType) ? 'grid-cols-6' : 'grid-cols-5') : 'grid-cols-4'}`}>
             <TabsTrigger value="products" className="flex items-center gap-2">
               <Package className="size-4" />
               {t('products')}
             </TabsTrigger>
+            {userProfile && ['wholesaler', 'retailer'].includes(userProfile.userType) && (
+              <TabsTrigger value="uploads" className="flex items-center gap-2">
+                <Plus className="size-4" />
+                Uploads
+              </TabsTrigger>
+            )}
             <TabsTrigger value="tracking" className="flex items-center gap-2">
               <MapPin className="size-4" />
               {t('tracking')}
@@ -558,6 +884,272 @@ function MainApp() {
               {t('analytics')}
             </TabsTrigger>
           </TabsList>
+
+          {/* Uploads Tab - Only for Wholesaler and Retailer */}
+          {userProfile && ['wholesaler', 'retailer'].includes(userProfile.userType) && (
+            <TabsContent value="uploads" className="space-y-6">
+              <div className="flex gap-4 items-center">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 size-4" />
+                  <Input
+                    placeholder={`Search uploaded products...`}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-10"
+                  />
+                </div>
+                <Button onClick={performSearch} disabled={loading}>
+                  <Search className="size-4 mr-2" />
+                  {loading ? t('searching') : t('search')}
+                </Button>
+              </div>
+
+              {(() => {
+                // UPLOADS SECTION: ONLY show products from userUploads array (real form submissions only)
+                // This ensures uploads section starts completely empty and only shows actual user uploads
+                const uploadedProducts = userUploads.filter(product => {
+                  // ✅ ONLY CURRENT USER: Only current user's uploads
+                  const isCurrentUserUploader = 
+                    (product.userId === userProfile.userId) || 
+                    (product.farmerId === userProfile.userId);
+                  
+                  const typeMatches = product.addedByType === userProfile.userType;
+                  
+                  return isCurrentUserUploader && typeMatches;
+                }).filter(product => 
+                  product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                  (product.farmer || product.farmerName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+                  product.id.toLowerCase().includes(searchQuery.toLowerCase())
+                );
+
+                return (
+                  <div className="space-y-4">
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                      <h3 className="text-lg font-semibold text-green-900 mb-2">
+                        <Plus className="size-5 inline mr-2" />
+                        My Uploaded Products
+                      </h3>
+                      <p className="text-sm text-green-700">
+                        Only products you have personally uploaded via "Add to Inventory" button. Total: {uploadedProducts.length}
+                      </p>
+                      <div className="mt-2 text-xs text-green-600 bg-green-100 rounded px-2 py-1 inline-block">
+                        ✅ Form uploads only • ❌ Zero demo data • ❌ Personal uploads only
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {uploadedProducts.map((product) => (
+                        <Card key={product.id} className="hover:shadow-lg transition-shadow">
+                          <CardHeader className="pb-3">
+                            <div className="flex items-start justify-between">
+                              <div>
+                                <CardTitle className="text-lg">{product.name}</CardTitle>
+                                <CardDescription>ID: {product.id}</CardDescription>
+                              </div>
+                              <Badge variant={product.status === 'Delivered' ? 'default' : 'secondary'}>
+                                {product.status}
+                              </Badge>
+                            </div>
+                          </CardHeader>
+                          <CardContent className="space-y-3">
+                            <div className="flex gap-3">
+                              <div className="flex-1 space-y-3">
+                                <div className="flex items-center gap-2 text-sm text-gray-600">
+                                  <User className="size-4" />
+                                  <span>{product.farmer || product.farmerName || product.addedByName}</span>
+                                  <Badge variant="outline" className="text-xs">
+                                    {product.addedByType || 'farmer'}
+                                  </Badge>
+                                </div>
+                                
+                                <div className="flex items-center gap-2 text-sm text-gray-600">
+                                  <MapPin className="size-4" />
+                                  <span>{product.location}</span>
+                                </div>
+                                
+                                <div className="flex items-center gap-2 text-sm text-gray-600">
+                                  <Calendar className="size-4" />
+                                  <span>{product.harvestDate}</span>
+                                </div>
+                                
+                                {/* Pricing Information */}
+                                <div className="space-y-1 pt-2">
+                                  {product.originalPrice && product.handlingCharge > 0 ? (
+                                    <div className="space-y-1">
+                                      <div className="text-xs text-gray-500">
+                                        Farmer Price: ₹{product.originalPrice}/kg
+                                      </div>
+                                      <div className="text-xs text-gray-500">
+                                        Handling: +₹{product.handlingCharge}/kg
+                                      </div>
+                                      <div className="flex items-center gap-1 text-lg font-medium">
+                                        <IndianRupee className="size-4" />
+                                        <span>{product.price}/kg</span>
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <div className="flex items-center gap-1 text-lg">
+                                      <IndianRupee className="size-4" />
+                                      <span>{product.price}/kg</span>
+                                    </div>
+                                  )}
+                                  <Badge variant="outline">{product.quality}</Badge>
+                                </div>
+                              </div>
+                              
+                              {/* Product Image */}
+                              {product.imageUrl && (
+                                <div className="w-20 h-20 rounded-lg overflow-hidden border">
+                                  <img
+                                    src={product.imageUrl}
+                                    alt={product.name}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                            
+                            <div className="flex gap-2 pt-2">
+                              <Button 
+                                size="sm" 
+                                variant="outline" 
+                                className="flex-1"
+                                onClick={() => {
+                                  setSelectedProduct(product);
+                                  setActiveTab('tracking');
+                                }}
+                              >
+                                {t('trackJourney')}
+                              </Button>
+                              <Dialog>
+                                <DialogTrigger asChild>
+                                  <Button size="sm" variant="outline">
+                                    <QrCode className="size-4" />
+                                  </Button>
+                                </DialogTrigger>
+                                <DialogContent>
+                                  <DialogHeader>
+                                    <DialogTitle>Product QR Code</DialogTitle>
+                                    <DialogDescription>
+                                      QR Code for {product.name} (ID: {product.id})
+                                    </DialogDescription>
+                                  </DialogHeader>
+                                  <div className="flex flex-col items-center gap-4 py-6">
+                                    <div className="w-64 h-64 bg-white border rounded-lg flex items-center justify-center p-4">
+                                      {(() => {
+                                        // Check if current user has QR and this product belongs to them
+                                        const productOwnerId = product.userId || product.farmerId;
+                                        const currentUserId = userProfile?.userId;
+                                        const hasUserQR = userProfile && userQRCodes[userProfile.userId];
+                                        const isProductOwner = productOwnerId === currentUserId;
+                                        
+                                        if (hasUserQR && isProductOwner) {
+                                          return <img src={userQRCodes[userProfile.userId]} alt="Product QR Code" className="w-full h-full object-contain" />;
+                                        } else {
+                                          return (
+                                            <div className="text-center">
+                                              <QrCode className="size-32 mx-auto mb-4 text-gray-400" />
+                                              <div className="space-y-2 text-sm">
+                                                <div className="font-mono bg-gray-100 p-2 rounded">
+                                                  {product.qrCode || `QR_${product.id}`}
+                                                </div>
+                                                <div className="text-xs text-gray-500">
+                                                  Scan to track this product
+                                                </div>
+                                              </div>
+                                            </div>
+                                          );
+                                        }
+                                      })()}
+                                    </div>
+                                    <div className="text-center space-y-1">
+                                      <p className="font-medium">{product.name}</p>
+                                      <p className="text-sm text-gray-600">ID: {product.id}</p>
+                                      <p className="text-sm text-gray-600">
+                                        Current Status: {product.status}
+                                      </p>
+                                      {(() => {
+                                        const productOwnerId = product.userId || product.farmerId;
+                                        const currentUserId = userProfile?.userId;
+                                        const hasUserQR = userProfile && userQRCodes[userProfile.userId];
+                                        const isProductOwner = productOwnerId === currentUserId;
+                                        
+                                        if (hasUserQR && isProductOwner) {
+                                          return (
+                                            <p className="text-xs text-blue-600 mt-2">
+                                              QR uploaded by: {userProfile.name} ({userProfile.userType})
+                                            </p>
+                                          );
+                                        }
+                                        return null;
+                                      })()}
+                                    </div>
+                                  </div>
+                                </DialogContent>
+                              </Dialog>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+
+                    {uploadedProducts.length === 0 && (
+                      <div className="text-center py-16">
+                        <div className="max-w-md mx-auto">
+                          <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <Plus className="size-12 text-gray-400" />
+                          </div>
+                          <h3 className="text-xl font-semibold text-gray-900 mb-3">Start Building Your Inventory</h3>
+                          <p className="text-gray-600 mb-6">
+                            This section will show products you upload via the "Add to Inventory" form. Currently empty - ready for your first upload!
+                          </p>
+                          
+                          <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-6 text-left">
+                            <div className="flex items-center gap-3 mb-4">
+                              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <Plus className="size-4 text-green-600" />
+                              </div>
+                              <h4 className="font-semibold text-green-900">Quick Start Guide</h4>
+                            </div>
+                            <div className="space-y-3 text-sm text-green-800">
+                              <div className="flex items-start gap-3">
+                                <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-medium text-green-700 mt-0.5">1</span>
+                                <span>Click "Add to Inventory" button above</span>
+                              </div>
+                              <div className="flex items-start gap-3">
+                                <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-medium text-green-700 mt-0.5">2</span>
+                                <span>Fill product details (name, price, location)</span>
+                              </div>
+                              <div className="flex items-start gap-3">
+                                <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-medium text-green-700 mt-0.5">3</span>
+                                <span>Upload product image (optional)</span>
+                              </div>
+                              <div className="flex items-start gap-3">
+                                <span className="w-5 h-5 bg-green-200 rounded-full flex items-center justify-center text-xs font-medium text-green-700 mt-0.5">4</span>
+                                <span>Submit - your product will appear here instantly!</span>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <Button 
+                            onClick={() => setProductFormOpen(true)}
+                            className="bg-green-600 hover:bg-green-700 text-white px-8 py-3"
+                          >
+                            <Plus className="size-5 mr-2" />
+                            Upload Your First Product
+                          </Button>
+                          
+                          <p className="text-xs text-gray-500 mt-4">
+                            Only your uploaded products will appear here • Demo products won't show
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
+            </TabsContent>
+          )}
 
           {/* Products Tab */}
           <TabsContent value="products" className="space-y-6">
@@ -597,11 +1189,9 @@ function MainApp() {
                         <div className="flex items-center gap-2 text-sm text-gray-600">
                           <User className="size-4" />
                           <span>{product.farmer || product.farmerName || product.addedByName}</span>
-                          {product.addedByType && product.addedByType !== 'farmer' && (
-                            <Badge variant="outline" className="text-xs">
-                              {product.addedByType}
-                            </Badge>
-                          )}
+                          <Badge variant="outline" className="text-xs">
+                            {product.addedByType || 'farmer'}
+                          </Badge>
                         </div>
                         
                         <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -656,9 +1246,12 @@ function MainApp() {
                         size="sm" 
                         variant="outline" 
                         className="flex-1"
-                        onClick={() => setSelectedProduct(product)}
+                        onClick={() => {
+                          setSelectedProduct(product);
+                          setActiveTab('tracking');
+                        }}
                       >
-{t('trackJourney')}
+                        {t('trackJourney')}
                       </Button>
                       {userProfile && userProfile.userType !== 'farmer' && product.status !== 'Sold' && product.status !== 'Delivered' && (
                         <Button 
@@ -680,9 +1273,72 @@ function MainApp() {
                           {t('buy')}
                         </Button>
                       )}
-                      <Button size="sm" variant="outline">
-                        <QrCode className="size-4" />
-                      </Button>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button size="sm" variant="outline">
+                            <QrCode className="size-4" />
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>Product QR Code</DialogTitle>
+                            <DialogDescription>
+                              QR Code for {product.name} (ID: {product.id})
+                            </DialogDescription>
+                          </DialogHeader>
+                          <div className="flex flex-col items-center gap-4 py-6">
+                            <div className="w-64 h-64 bg-white border rounded-lg flex items-center justify-center p-4">
+                              {(() => {
+                                // Check if current user has QR and this product belongs to them
+                                const productOwnerId = product.userId || product.farmerId;
+                                const currentUserId = userProfile?.userId;
+                                const hasUserQR = userProfile && userQRCodes[userProfile.userId];
+                                const isProductOwner = productOwnerId === currentUserId;
+                                
+                                if (hasUserQR && isProductOwner) {
+                                  return <img src={userQRCodes[userProfile.userId]} alt="Product QR Code" className="w-full h-full object-contain" />;
+                                } else {
+                                  return (
+                                    <div className="text-center">
+                                      <QrCode className="size-32 mx-auto mb-4 text-gray-400" />
+                                      <div className="space-y-2 text-sm">
+                                        <div className="font-mono bg-gray-100 p-2 rounded">
+                                          {product.qrCode || `QR_${product.id}`}
+                                        </div>
+                                        <div className="text-xs text-gray-500">
+                                          Scan to track this product
+                                        </div>
+                                      </div>
+                                    </div>
+                                  );
+                                }
+                              })()}
+                            </div>
+                            <div className="text-center space-y-1">
+                              <p className="font-medium">{product.name}</p>
+                              <p className="text-sm text-gray-600">ID: {product.id}</p>
+                              <p className="text-sm text-gray-600">
+                                Current Status: {product.status}
+                              </p>
+                              {(() => {
+                                const productOwnerId = product.userId || product.farmerId;
+                                const currentUserId = userProfile?.userId;
+                                const hasUserQR = userProfile && userQRCodes[userProfile.userId];
+                                const isProductOwner = productOwnerId === currentUserId;
+                                
+                                if (hasUserQR && isProductOwner) {
+                                  return (
+                                    <p className="text-xs text-blue-600 mt-2">
+                                      QR uploaded by: {userProfile.name} ({userProfile.userType})
+                                    </p>
+                                  );
+                                }
+                                return null;
+                              })()}
+                            </div>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
                     </div>
                   </CardContent>
                 </Card>
@@ -789,72 +1445,89 @@ function MainApp() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-4">
-                      <h3>Product Details</h3>
-                      <div className="space-y-2 text-sm">
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Product ID:</span>
-                          <span>{selectedProduct.id}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">{selectedProduct.addedByType === 'farmer' ? 'Farmer:' : 'Added by:'}:</span>
-                          <span>{selectedProduct.farmer || selectedProduct.farmerName || selectedProduct.addedByName}</span>
-                        </div>
-                        {selectedProduct.addedByType && selectedProduct.addedByType !== 'farmer' && (
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">Type:</span>
-                            <span className="capitalize">{selectedProduct.addedByType}</span>
+                  {/* Complete Product Information */}
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                    <h3 className="text-lg font-semibold text-blue-900 mb-3">Complete Product Details</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                      <div className="space-y-3">
+                        <div>
+                          <span className="text-gray-600 font-medium">Product Information:</span>
+                          <div className="mt-1 space-y-1">
+                            <p><strong>Name:</strong> {selectedProduct.name}</p>
+                            <p><strong>ID:</strong> {selectedProduct.id}</p>
+                            <p><strong>Quality Grade:</strong> {selectedProduct.quality}</p>
+                            <p><strong>Status:</strong> <Badge variant="outline">{selectedProduct.status}</Badge></p>
                           </div>
-                        )}
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Origin:</span>
-                          <span>{selectedProduct.location}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Harvest Date:</span>
-                          <span>{selectedProduct.harvestDate}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Current Location:</span>
-                          <span>{selectedProduct.currentLocation}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Price:</span>
-                          <div className="text-right">
-                            {selectedProduct.originalPrice && selectedProduct.handlingCharge > 0 ? (
-                              <div className="space-y-1">
-                                <div className="text-xs text-gray-500">
-                                  Farmer: ₹{selectedProduct.originalPrice}/kg
-                                </div>
-                                <div className="text-xs text-gray-500">
-                                  Handling: +₹{selectedProduct.handlingCharge}/kg
-                                </div>
-                                <div className="font-medium">₹{selectedProduct.price}/kg</div>
-                              </div>
-                            ) : (
-                              <span>₹{selectedProduct.price}/kg</span>
-                            )}
-                          </div>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-gray-600">Blockchain Hash:</span>
-                          <span className="font-mono text-xs">{selectedProduct.blockchainHash}</span>
                         </div>
                       </div>
                       
-                      {/* Product Image */}
-                      {selectedProduct.imageUrl && (
-                        <div className="mt-4">
-                          <h4 className="text-sm font-medium mb-2">Product Image</h4>
+                      <div className="space-y-3">
+                        <div>
+                          <span className="text-gray-600 font-medium">Source Information:</span>
+                          <div className="mt-1 space-y-1">
+                            <p><strong>{selectedProduct.addedByType === 'farmer' ? 'Farmer' : 'Added by'}:</strong> {selectedProduct.farmer || selectedProduct.farmerName || selectedProduct.addedByName}</p>
+                            {selectedProduct.addedByType && selectedProduct.addedByType !== 'farmer' && (
+                              <p><strong>Supplier Type:</strong> <span className="capitalize">{selectedProduct.addedByType}</span></p>
+                            )}
+                            <p><strong>Origin Location:</strong> {selectedProduct.location}</p>
+                            <p><strong>Harvest/Upload Date:</strong> {selectedProduct.harvestDate}</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <div>
+                          <span className="text-gray-600 font-medium">Current Status:</span>
+                          <div className="mt-1 space-y-1">
+                            <p><strong>Current Location:</strong> {selectedProduct.currentLocation}</p>
+                            <p><strong>Blockchain Hash:</strong> <span className="font-mono text-xs break-all">{selectedProduct.blockchainHash}</span></p>
+                            <div>
+                              <strong>Pricing:</strong>
+                              {selectedProduct.originalPrice && selectedProduct.handlingCharge > 0 ? (
+                                <div className="mt-1 space-y-1">
+                                  <div className="text-xs">Farmer Price: ₹{selectedProduct.originalPrice}/kg</div>
+                                  <div className="text-xs">Handling Charge: +₹{selectedProduct.handlingCharge}/kg</div>
+                                  <div className="font-semibold">Final Price: ₹{selectedProduct.price}/kg</div>
+                                </div>
+                              ) : (
+                                <span className="ml-1">₹{selectedProduct.price}/kg</span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Upload/Addition Details */}
+                    <div className="mt-4 pt-4 border-t border-blue-200">
+                      <h4 className="font-medium text-blue-900 mb-2">Upload Timeline</h4>
+                      <div className="text-sm space-y-1">
+                        <p><strong>Product uploaded on:</strong> {selectedProduct.harvestDate}</p>
+                        <p><strong>Uploaded by:</strong> {selectedProduct.farmer || selectedProduct.farmerName || selectedProduct.addedByName} 
+                          {selectedProduct.addedByType && selectedProduct.addedByType !== 'farmer' && (
+                            <span className="ml-1 text-gray-600">({selectedProduct.addedByType})</span>
+                          )}
+                        </p>
+                        <p><strong>Source location:</strong> {selectedProduct.location}</p>
+                        <p><strong>Initial status:</strong> Ready for distribution</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Product Image */}
+                    {selectedProduct.imageUrl && (
+                      <div className="space-y-4">
+                        <h3>Product Image</h3>
+                        <div className="border rounded-lg overflow-hidden">
                           <img
                             src={selectedProduct.imageUrl}
                             alt={selectedProduct.name}
-                            className="w-full h-32 object-cover rounded-lg border"
+                            className="w-full h-64 object-cover"
                           />
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    )}
                     
                     <div className="space-y-4">
                       <h3>Supply Chain Progress</h3>
