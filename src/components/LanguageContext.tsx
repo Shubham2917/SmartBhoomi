@@ -17,7 +17,7 @@ const translations = {
     signup: "Sign Up",
     signout: "Sign Out",
     refresh: "Refresh",
-    scanqr: "Scan QR",
+    scanqr: "Upload QR",
     addproduct: "Add Product",
     addtoinventory: "Add to Inventory",
 
@@ -193,7 +193,7 @@ const translations = {
     signup: "साइन अप",
     signout: "साइन आउट",
     refresh: "रिफ्रेश",
-    scanqr: "क्यूआर स्कैन करें",
+    scanqr: "क्यूआर अपलोड करें",
     addproduct: "उत्पाद जोड़ें",
     addtoinventory: "इन्वेंटरी में जोड़ें",
 
