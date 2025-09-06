@@ -576,7 +576,7 @@ export function LandingPage({ onAuthSuccess }: LandingPageProps) {
           {/* Benefits Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "10+", subtitle: t('verifiedFarmers'), icon: "👨‍🌾" },
+              { title: "15+", subtitle: t('verifiedFarmers'), icon: "👨‍🌾" },
               { title: "97%", subtitle: t('priceTransparency'), icon: "💰" },
               { title: "85%", subtitle: t('supplyChainEfficiency'), icon: "📈" },
               { title: "3.2", subtitle: "Avg. Days Farm to Table", icon: "⏱️" }
