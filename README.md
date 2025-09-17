@@ -1,4 +1,4 @@
-SmartBhoomi – Project Overview
+SmartBhoomi – Project Overview(SIH:2K25)
 
 SmartBhoomi is an innovative platform designed to improve the Indian agricultural supply chain by empowering farmers, reducing the role of middlemen, and increasing transparency. This project was developed as part of the Smart India Hackathon 2025 with the goal of addressing real-world agricultural challenges using technology.
 
